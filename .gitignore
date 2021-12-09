@@ -17,3 +17,4 @@ mobile/web-build/
 mobile/.DS_Store
 
 backend/package-lock.json
+backend/**/*.js

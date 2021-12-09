@@ -8,6 +8,6 @@ const server = http.createServer(app);
 
 socket(server);
 
-server.listen(3000, () => {
+server.listen(process.env.PORT || 3000, () => {
     console.log('The application is listening on port 3000!');
 })
