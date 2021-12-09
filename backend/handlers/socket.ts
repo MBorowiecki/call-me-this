@@ -75,7 +75,7 @@ const joinRoom = (socket: Socket, id: string, userName: string) => {
             points: 0
         })
         socket.join(room.id.toString());
-        socket.emit('rooms:joined');
+        socket.emit('rooms:joined', { room });
 
         if (room) {
             io.sockets.in(room.id.toString()).emit('rooms:meta', { room })
@@ -104,7 +104,7 @@ const createRoom = (socket: Socket, userName: string) => {
         rooms.push(newRoom)
 
         socket.join(newRoomId.toString());
-        socket.emit('rooms:joined');
+        socket.emit('rooms:joined', { room: newRoom });
 
         if (newRoom) {
             io.sockets.in(newRoom.id.toString()).emit('rooms:meta', { room: newRoom })

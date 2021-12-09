@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Socket } from 'socket.io-client';
+import { t } from 'i18n-js';
 
 import { ButtonPrimary } from '../components/buttons';
 import { CardTitle, CardViewPrimary } from '../components/cards';
@@ -88,9 +89,9 @@ const Home: React.FC = () => {
             <StatusBar style="light" />
 
             <View style={{ marginTop: 40 }}>
-                <Text style={{ textAlign: "center", fontSize: 14, color: "#f0f0f0" }}>Room ID: {meta?.id}</Text>
+                <Text style={{ textAlign: "center", fontSize: 14, color: "#f0f0f0" }}>{t('Room ID')}: {meta?.id}</Text>
             </View>
-            <BreakView margin="m" />
+            <BreakView margin="sm" />
 
             <ScrollView
                 style={{
@@ -100,8 +101,8 @@ const Home: React.FC = () => {
                     alignItems: "center"
                 }}
             >
-                <Text style={{ fontSize: 36, color: "#f0f0f0", fontWeight: "700" }}>Players:</Text>
-                <BreakView margin="m" />
+                <Text style={{ fontSize: 36, color: "#f0f0f0", fontWeight: "700" }}>{t('Players')}:</Text>
+                <BreakView margin="sm" />
                 {meta && meta.users.map(user => {
                     return (
                         <Text
@@ -111,7 +112,7 @@ const Home: React.FC = () => {
                                 color: "#f0f0f0"
                             }}
                         >
-                            {user.name} | Score: {user.points}
+                            {user.name} | {t('Score')}: {user.points}
                         </Text>
                     )
                 })}
@@ -122,7 +123,7 @@ const Home: React.FC = () => {
                     <ButtonPrimary
                         onPress={() => socket && startGame(socket, meta.id.toString())}
                     >
-                        <Text style={{ fontSize: 24, color: "#f0f0f0", fontWeight: "700" }}>START GAME!</Text>
+                        <Text style={{ fontSize: 24, color: "#f0f0f0", fontWeight: "700" }}>{t('START GAME!')}</Text>
                     </ButtonPrimary>
                 }
                 {isGameMaster && currentCard && isGameStarted &&
@@ -141,15 +142,15 @@ const Home: React.FC = () => {
                 {!isGameMaster && isGameStarted &&
                     <CardViewPrimary>
                         <TextInputPrimary
-                            placeholder="Guess the word..."
+                            placeholder={t('Guess the word...')}
                             keyboardType="default"
                             onTextChanged={(text) => setWordGuessed(text)}
                         />
-                        <BreakView margin="xl" />
+                        <BreakView margin="m" />
                         <ButtonPrimary
                             onPress={() => meta && socket && guessWord(socket, wordGuessed, meta.id.toString())}
                         >
-                            <Text style={{ fontSize: 16, color: "#f0f0f0", fontWeight: "700" }}>GUESS!</Text>
+                            <Text style={{ fontSize: 16, color: "#f0f0f0", fontWeight: "700" }}>{t('GUESS!')}</Text>
                         </ButtonPrimary>
                     </CardViewPrimary>
                 }

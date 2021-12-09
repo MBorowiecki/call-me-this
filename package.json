@@ -1,0 +1,22 @@
+{
+  "name": "callmethis",
+  "version": "1.0.0",
+  "description": "One player in each round has card with word he/she has to describe and six words which cannot use during describing.",
+  "scripts": {
+    "dev:server": "npm --prefix ./backend run dev",
+    "dev:mobile": "npm --prefix ./mobile start",
+    "build:server": "npm --prefix ./backend run build",
+    "start:server": "npm --prefix ./backend start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MBorowiecki/call-me-this.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MBorowiecki/call-me-this/issues"
+  },
+  "homepage": "https://github.com/MBorowiecki/call-me-this#readme"
+}
