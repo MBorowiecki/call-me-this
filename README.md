@@ -1,5 +1,5 @@
 # CallMeThis is a game project based on the Taboo game rules.
-One player in each round has card with word he/she has to describe and six words which cannot use during describing.
+One player in each round has card with word to describe and six words which cannot use during describing.
 
 ## Table of contents
 - [Technologies](#technologies)
