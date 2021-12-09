@@ -21,6 +21,7 @@ One player in each round has card with word to describe and six words which cann
 Requirements
 - Expo CLI
 - Node.js >= v16
+- Nodemon
 
 ```
 npm install -g expo-cli
