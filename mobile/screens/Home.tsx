@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 import { Socket } from 'socket.io-client';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/core';
+import { t } from 'i18n-js';
 
 import { ButtonPrimary, ButtonSecondary } from '../components/buttons';
 import { SocketContext } from '../contexts/socket';
@@ -45,39 +46,39 @@ const Home: React.FC = () => {
 
             <CardViewPrimary>
                 <TextInputPrimary
-                    placeholder="Your name"
+                    placeholder={t('Your name')}
                     keyboardType="default"
                     onTextChanged={(text) => setUserName(text)}
                 />
-                <BreakView margin="xl" />
+                <BreakView margin="m" />
                 <TextInputPrimary
-                    placeholder="Game ID"
+                    placeholder={t('Game ID')}
                     keyboardType="numeric"
                     onTextChanged={(text) => setGameId(text)}
                 />
-                <BreakView margin="xl" />
+                <BreakView margin="m" />
                 <ButtonPrimary
                     onPress={() => socket && userName.length > 0 && gameId.length > 0 && connectToRoom(userName, gameId, socket)}
                 >
                     <Text
                         style={{ fontSize: 16, fontWeight: "700", color: "#ffffff" }}
-                    >JUMP IN!</Text>
+                    >{t('JUMP IN!')}</Text>
                 </ButtonPrimary>
-                <BreakView margin="xl" />
+                <BreakView margin="m" />
                 <View
                     style={{ alignItems: "center" }}
                 >
                     <Text
                         style={{ fontSize: 14, fontWeight: "400", color: "#202020", alignItems: "center" }}
-                    >Or</Text>
+                    >{t('Or')}</Text>
                 </View>
-                <BreakView margin="m" />
+                <BreakView margin="sm" />
                 <ButtonSecondary
                     onPress={() => socket && userName.length > 0 && createRoom(userName, socket)}
                 >
                     <Text
                         style={{ fontSize: 14, fontWeight: "700", color: "#202020" }}
-                    >CREATE GAME</Text>
+                    >{t('CREATE GAME')}</Text>
                 </ButtonSecondary>
             </CardViewPrimary>
         </MainView>
