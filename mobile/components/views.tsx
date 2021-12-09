@@ -12,7 +12,7 @@ const MainViewStyled = styled(View)`
 `
 
 const BreakViewStyled = styled(View)`
-    margin-bottom: ${(props: IBreakViewStyledProps) => props.margin};
+    margin-bottom: ${(props: IBreakViewStyledProps) => props.margin}px;
 `
 
 export const MainView: React.FC = ({
