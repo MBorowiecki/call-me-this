@@ -3,7 +3,7 @@ One player in each round has card with word he/she has to describe and six words
 
 ## Table of contents
 - [Technologies](#technologies)
-- [Instalation](#installation)
+- [Instalation](#instalation)
 
 ## Technologies
 - TypeScript
