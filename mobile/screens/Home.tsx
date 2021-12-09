@@ -1,14 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { CardViewPrimary } from '../components/cards';
-import { TextInputPrimary } from '../components/inputs';
-import { BreakView, MainView } from '../components/views';
 import { View, Text } from 'react-native';
-import { ButtonPrimary, ButtonSecondary } from '../components/buttons';
 import { Socket } from 'socket.io-client';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/core';
+
+import { ButtonPrimary, ButtonSecondary } from '../components/buttons';
 import { SocketContext } from '../contexts/socket';
+import { CardViewPrimary } from '../components/cards';
+import { TextInputPrimary } from '../components/inputs';
+import { BreakView, MainView } from '../components/views';
 
 const connectToRoom: (userName: string, gameId: string, socket: Socket) => void = (userName, gameId, socket) => {
     socket.emit('rooms:join', { id: gameId, userName });
